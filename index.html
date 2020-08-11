@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
 
@@ -15,12 +15,13 @@
     <!-- showing data from JSON to HTML -->
 
     <script>
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(json => displayUser(json))
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then((response) => response.json())
+            .then((json) => displayUser(json))
+            .catch((error) => console.log(error));
 
         function displayUser(users) {
-            const userNames = users.map(user => user.username);
+            const userNames = users.map((user) => user.username);
             const ul = document.getElementById("users-container");
             for (let i = 0; i < userNames.length; i++) {
                 const username = userNames[i];
